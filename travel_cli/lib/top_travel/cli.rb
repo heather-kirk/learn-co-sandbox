@@ -21,7 +21,7 @@ class Travel::CLI
     input = gets.strip.downcase
     
     if input.to_i-1 <= Travel::Location.all.size
-      your_destination = Travel::Location.all[input-1]
+      your_destination = Travel::Location.all[input.to_i-1]
       puts location.name
       puts 
       puts location.subtitle
@@ -29,7 +29,7 @@ class Travel::CLI
       puts location.booking
       
     elsif input == "list"
-    start
+    list_locations
     elsif input == "exit"
     goodbye
     else 
