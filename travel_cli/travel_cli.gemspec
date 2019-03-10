@@ -1,11 +1,11 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "travel_cli/version"
+require "top_travel/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "travel_cli"
-  spec.version       = TravelCli::VERSION
+  spec.version       = Travel::VERSION
   spec.authors       = ["'Heather Kirk'"]
   spec.email         = ["'hskirk@gmail.com'"]
 
@@ -38,7 +38,6 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 2.0"
   spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "pry"
   
-  spec.add_dependency "nokogiri"
+
 end
