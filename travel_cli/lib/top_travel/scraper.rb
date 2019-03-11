@@ -5,9 +5,9 @@ class Travel::Scraper
   @doc.search("figcaption").each do |destination|
     location = Travel::Location.new
     
-     location.name = destination.search("h2.bb-h2").text
+     location.name = destination.search("h2.bb-h2").text.split.each{|l| l.capitalize!}.join(" ")
      location.subtitle = destination.search("h3.bb-h3").text
-     location.summary = destination.search("#text p.bb-p").text
+     location.summary = destination.search("p.bb-p").text
      location.booking = destination.search("strong.bb-strong").text
      
      location.save

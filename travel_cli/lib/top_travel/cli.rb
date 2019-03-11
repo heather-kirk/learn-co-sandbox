@@ -6,6 +6,7 @@ class Travel::CLI
   Travel::Scraper.new.scrape_locations
   list_locations
   menu
+  goodbye
   end 
   
   def list_locations
@@ -21,10 +22,13 @@ class Travel::CLI
     input = gets.strip.downcase
     
     if input.to_i-1 <= Travel::Location.all.size
-      your_destination = Travel::Location.all[input.to_i-1]
+      location = Travel::Location.all[input.to_i-1]
+      
+      puts
       puts location.name
       puts 
       puts location.subtitle
+      puts
       puts location.summary
       puts location.booking
       
