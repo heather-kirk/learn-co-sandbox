@@ -1,4 +1,4 @@
-class Travel::CLI
+1class Travel::CLI
   
   def call 
   puts "Ready to book your next vacation?"
