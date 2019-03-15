@@ -11,6 +11,7 @@ class Travel::CLI
   
   def list_locations
     Travel::Location.all.each_with_index do |location, i|
+     
     puts "#{i +1}. #{location.name}"
    end 
   end 
