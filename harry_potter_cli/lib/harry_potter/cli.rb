@@ -11,9 +11,9 @@ class HP::CLI
   end 
   
   def list_books
-    HP::Book.all.each_with_index do |title, i|
-     
+    HP::Book.all.each_with_index do |new_book, i|
     puts "#{i +1}. #{new_book.title}"
+   
    end 
   end 
   
@@ -26,16 +26,12 @@ class HP::CLI
     
     if input.to_i-1 <= HP::Book.all.size
       new_book = HP::Book.all[input.to_i-1]
-      
-      puts
       puts new_book.title
-      puts 
       puts new_book.author
-      puts
       puts new_book.details
       
     elsif input == "list"
-    list_locations
+    list_books
     elsif input == "exit"
     goodbye
     else 
